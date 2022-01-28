@@ -1,7 +1,7 @@
 # Enrolment_App
 Required Tool and python package
 
-~ Visual Studio Code
+~ Any Python Tools
 ~ python3
 ~ Django Package
 ~ SQL DATABASE(STRUCTURE QUERY LANGUAGE)
