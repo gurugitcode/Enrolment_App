@@ -2,19 +2,19 @@
 Required Tool and python package
 
 ~ Any Code Editer (python-IDLE, Visual Studio code ,pycharm,Atom)<BR>
-~ python3
+~ python3<BR>
 ~ Django Package
-~ SQL DATABASE(STRUCTURE QUERY LANGUAGE)
-~ pip install django
+~ SQL DATABASE(STRUCTURE QUERY LANGUAGE)<BR>
+~ pip install django<BR>
 
 
-~ open terminal
-Go to the project folder
-cd /Clavax_School
+~ open terminal<BR>
+Go to the project folder<BR>
+cd /Clavax_School<BR>
 
-Run command
-python manage.py runserver
-find this url
+Run command<BR>
+python manage.py runserver<BR>
+find this url<BR>
 copy url <  http://127.0.0.1:8000/ > and paste in browser
 
 
