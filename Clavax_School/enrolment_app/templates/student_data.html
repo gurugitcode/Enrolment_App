@@ -1,0 +1,92 @@
+{% extends 'home.html' %} {% load static %} {% block content %}
+<div class=col-sm-2>
+    <h4 class="text-center alert-info">
+
+        <a href="{% url 'stu_form' %}" class="btn">
+            <div class="text-right">
+                <button type="button" class="btn btn-primary-right">New Student</button>
+            </div>
+        </a>
+
+    </h4>
+
+</div>
+
+
+
+<table class="table mb-2 table-dark table-striped">
+    <thead>
+        {% if page_obj %}
+        <tr class="text-center">
+            <th scope="col" style="width:2%">Student_ID</th>
+            <th scope="col" style="width:2%">student_name</th>
+            <th scope="col" style="width:2%">father_name</th>
+            <th scope="col" style="width:2%">dob</th>
+            <th scope="col" style="width:2%">address</th>
+            <th scope="col" style="width:2%">city</th>
+            <th scope="col" style="width:2%">state</th>
+            <th scope="col" style="width:2%">pinno</th>
+            <th scope="col" style="width:2%">mobailno</th>
+            <th scope="col" style="width:2%">email</th>
+            <th scope="col" style="width:2%">marks</th>
+            <th scope="col" style="width:2%">date_enrolled</th>
+            <th scope="col" style="width:2%">Edit</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in page_obj %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td><a href="{% url 'show_data' post.id %}">{{post.student_name}}</a></td>
+            <td>{{post.father_name}}</td>
+            <td>{{post.dob}}</td>
+            <td>{{post.address}}</td>
+            <td>{{post.city}}</td>
+            <td>{{post.state}}</td>
+            <td>{{post.pinno}}</td>
+            <td>{{post.mobailno}}</td>
+            <td>{{post.email}}</td>
+            <td>{{post.class_opted}}</td>
+            <td>{{post.date_enrolled}}</td>
+            <td>
+                <a href="{% url 'Update_post' post.id %}" class="btn btn-warning btn-sm">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<style>
+    a {
+        text-decoration: none;
+        display: inline-block;
+        padding: 8px 16px;
+    }
+    
+    a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    
+    .previous {
+        background-color: #f1f1f1;
+        color: black;
+    }
+    
+    .next {
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+<center>
+    {%if page_obj.has_previous %} {# whether the previous page exists #}
+    <a href="?page={{page_obj.previous_page_number}}" class="previous">&laquo; Previous
+    </a> {# link to the prev page #} {% endif %}
+    <span>{{page_obj.number}}</span> {# the current page number #} {%if page_obj.has_next %} {# whether the next page exists #}
+    <a href="?page={{page_obj.next_page_number}}" class="next">Next &raquo;</a> {# link to the next page #} {% endif %}
+</center>
+
+{% else %}
+<h4 class="text-center alert alert-info mt-3">No Recoards </h4>
+{% endif %} {% endblock content %}

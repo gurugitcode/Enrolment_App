@@ -1,0 +1,194 @@
+{% extends 'home.html' %} {% load static %} {% block content %}
+<style>
+    .heading {
+        color: #fff
+    }
+</style>
+
+<div class="container mt-5">
+
+    <fieldset>
+        <!-- Form Name -->
+        <legend>
+            <center>
+                <h2 class="heading">Student Data</h2>
+            </center>
+        </legend><br>
+        <div class="form-group">
+            <div class="row gap-md-4">
+                <div class="col-md">
+                    <label class="col-md-4 heading control-label">Student_Name</label>
+                    <div class="form-floating">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <div class="form-control-plaintext">
+                                <input type="text" id="lname" name="lname" value="{{stu_data.father_name}}" disabled><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <label class="col-md-4 heading control-label">Father_Name</label>
+                    <div class="form-floating">
+                        <div class="form-floating">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <div class="form-control-plaintext">
+                                    <!--  Lable Name -->
+                                    <input type="text" id="lname" name="lname" value="{{stu_data.father_name}}" disabled><br><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gap-md-4">
+                <div class="col-md">
+                    <label class="col-md-4 heading control-label">Date Of Birth</label>
+                    <div class="form-floating">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <div class="form-control-plaintext">
+                                <!--  Lable Name -->
+                                <input type="text" id="lname" name="lname" value="{{stu_data.dob}}" disabled><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <label class="col-md-4 heading control-label">Address</label>
+                    <div class="form-floating">
+                        <div class="form-floating">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <div class="form-control-plaintext">
+                                    <!--  Lable Name -->
+                                    <input type="text" id="lname" name="lname" value="{{stu_data.address}}" disabled><br><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- stap2----- -->
+            <div class="row gap-md-4">
+                <div class="col-md">
+                    <label class="col-md-4 heading control-label">City</label>
+                    <div class="form-floating">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <div class="form-control-plaintext">
+                                <!--  Lable Name -->
+                                <input type="text" id="lname" name="lname" value="{{stu_data.city}}" disabled><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <label class="col-md-4 heading control-label">State</label>
+                    <div class="form-floating">
+                        <div class="form-floating">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <div class="form-control-plaintext">
+                                    <!--  Lable Name -->
+                                    <input type="text" id="lname" name="lname" value="{{stu_data.father_name}}" disabled><br><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- stap3------ -->
+            <div class="row gap-md-4">
+                <div class="col-md">
+                    <label class="col-md-4 heading control-label">Pin No</label>
+                    <div class="form-floating">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <div class="form-control-plaintext">
+                                <!--  Lable Name -->
+                                <input type="text" id="lname" name="lname" value="{{stu_data.pinno}}" disabled><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <label class="col-md-4 heading control-label">Mobail No</label>
+                    <div class="form-floating">
+                        <div class="form-floating">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <div class="form-control-plaintext">
+                                    <!--  Lable Name -->
+                                    <input type="text" id="lname" name="lname" value="{{stu_data.mobailno}}" disabled><br><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- stap3------ -->
+            <div class="row gap-md-4">
+                <div class="col-md">
+                    <label class="col-md-4 heading control-label">Email ID</label>
+                    <div class="form-floating">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <div class="form-control-plaintext">
+                                <!--  Lable Name -->
+                                <input type="text" id="lname" name="lname" value="{{stu_data.email}}" disabled><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <label class="col-md-4 heading control-label">Class Opted</label>
+                    <div class="form-floating">
+                        <div class="form-floating">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <div class="form-control-plaintext">
+                                    <!--  Lable Name -->
+                                    <input type="text" id="lname" name="lname" value="{{stu_data.class_opted}}" disabled><br><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- stap3------ -->
+            <div class="row gap-md-4">
+                <div class="col-md">
+                    <label class="col-md-4 heading control-label">Marks</label>
+                    <div class="form-floating">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <div class="form-control-plaintext">
+                                <!--  Lable Name -->
+                                <input type="text" id="lname" name="lname" value="{{stu_data.marks}}" disabled><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <label class="col-md-4 heading control-label">Date Enrolled</label>
+                    <div class="form-floating">
+                        <div class="form-floating">
+                            <div class="input-group disabled">
+                                <span class="input-group-addon disabled"><i class="glyphicon glyphicon-user"></i></span>
+                                <div class="form-control-plaintext">
+                                    <!--  Lable Name -->
+                                    <input type="text" id="lname" name="lname" value="{{stu_data.date_enrolled}}" disabled><br><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
+{% endblock content %}

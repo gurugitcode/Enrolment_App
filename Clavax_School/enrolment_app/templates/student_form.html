@@ -1,0 +1,205 @@
+{% extends 'home.html' %} {% load static %} {% block content %}
+<div class="container">
+    {% if messages %} {% for message in messages %}
+    <p class="heading" {% if message.tags %} {{message.tags}}{% endif %}>{{message}}</p>
+    {% endfor %} {% endif %}
+    <style>
+        .heading {
+            color: #fff
+        }
+    </style>
+
+    <div class="container mt-5">
+        <form class="well form-horizontal" method="POST" id="contact_form" validate>
+            {% csrf_token %}
+            <fieldset>
+                <!-- Form Name -->
+                <legend>
+                    <center>
+                        <h2 class="heading">Registration Form</h2>
+                    </center>
+                </legend><br>
+
+                <div class="form-group">
+                    <div class="row gap-md-4">
+                        <div class="col-md">
+                            <label class="col-md-4 heading control-label">Student_Name</label>
+                            <div class="form-floating">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <div class="form-control-plaintext">
+                                        {{ form.student_name }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <label class="col-md-4 heading control-label">Father_Name</label>
+                            <div class="form-floating">
+
+                                <div class="form-floating">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <div class="form-control-plaintext">
+                                            {{ form.father_name }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gap-md-4">
+                        <div class="col-md">
+                            <label class="col-md-4 heading control-label">Date Of Birth</label>
+                            <div class="form-floating">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <div class="form-control-plaintext">
+                                        {{ form.dob }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <label class="col-md-4 heading control-label">Address</label>
+                            <div class="form-floating">
+                                <div class="form-floating">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <div class="form-control-plaintext">
+                                            {{ form.address }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- stap2----- -->
+                    <div class="row gap-md-4">
+                        <div class="col-md">
+                            <label class="col-md-4 heading control-label">City</label>
+                            <div class="form-floating">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <div class="form-control-plaintext">
+                                        {{ form.city }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <label class="col-md-4 heading control-label">State</label>
+                            <div class="form-floating">
+                                <div class="form-floating">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <div class="form-control-plaintext">
+                                            {{ form.state }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- stap3------ -->
+                    <div class="row gap-md-4">
+                        <div class="col-md">
+                            <label class="col-md-4 heading control-label">Pin No</label>
+                            <div class="form-floating">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <div class="form-control-plaintext">
+                                        {{ form.pinno }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <label class="col-md-4 heading control-label">Mobail No</label>
+                            <div class="form-floating">
+                                <div class="form-floating">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <div class="form-control-plaintext">
+                                            {{ form.mobailno }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- stap3------ -->
+                    <div class="row gap-md-4">
+                        <div class="col-md">
+                            <label class="col-md-4 heading control-label">Email ID</label>
+                            <div class="form-floating">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <div class="form-control-plaintext">
+                                        {{ form.email }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <label class="col-md-4 heading control-label">Class Opted</label>
+                            <div class="form-floating">
+                                <div class="form-floating">
+                                    <div class="input-group">
+                                        <select class="form-control" id="{{ form.class_opted }}">
+                                          <option>5</option>
+                                          <option>6</option>
+                                          <option>7</option>
+                                          <option>8</option>
+                                          <option>9</option>
+                                          <option>10</option>
+                                        </select>
+                                        <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <div class="form-control-plaintext">
+                                            {{ form.class_opted }}
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- stap3------ -->
+                    <div class="row gap-md-4">
+                        <div class="col-md">
+                            <label class="col-md-4 heading control-label">Marks</label>
+                            <div class="form-floating">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <div class="form-control-plaintext">
+                                        {{ form.marks }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <label class="col-md-4 heading control-label">Data Enrolled</label>
+                            <div class="form-floating">
+                                <div class="form-floating">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <div class="form-control-plaintext">
+                                            {{ form.date_enrolled }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- stap3------ -->
+                </div>
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4"><br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <button type="submit" class="btn btn-success">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    {% endblock content %}
